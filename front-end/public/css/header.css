@@ -1,0 +1,12 @@
+.header{
+    background-color: #55c655;
+    width: 70%;
+    display: flex;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    font-size: 22px;
+    align-items: center;
+    color: #273f63;
+    box-shadow: 5px 5px 10px rgb(78 78 78);
+}

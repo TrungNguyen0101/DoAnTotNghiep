@@ -1,0 +1,358 @@
+/* Home */
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/coiny/coiny-regular.ttf);
+}
+
+
+
+label, p, h1, h2, h3, div, input {
+    font-family: myFirstFont, serif !important;
+}
+
+body {
+    background: url(../Images/StartPage/Background_sky.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: 105% 105%;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center 0;
+
+}
+
+.home {
+    position: relative;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home #logo {
+    margin-top: 150px;
+}
+
+.home #logo img {
+    margin-top: 75px;
+}
+
+.home #login-button a {
+    margin-left: 85px;
+}
+
+.home #login-button a img {
+    text-align: left;
+    margin-left: 65%;
+    margin-top: -15%;
+}
+
+.home .letgo-button {
+    margin-top: -50px;
+}
+
+.heart {
+    animation: animate 1.5s infinite;
+}
+
+.heart:before {
+    left: 100px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+
+@keyframes animate {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(.8);
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.zoom img {
+    transition: transform .2s;
+}
+
+.zoom img:hover {
+    transform: scale(1.1);
+}
+
+.cloud1 {
+    position: absolute;
+    z-index: 10;
+    margin-left: -10%;
+    margin-top: 5%;
+    animation-name: cloud1;
+    animation-duration: 20s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cloud1 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 120%
+    }
+}
+
+.cloud2 {
+    position: absolute;
+    z-index: 10;
+    margin-left: -12%;
+    margin-top: -5%;
+    animation-name: cloud2;
+    animation-duration: 22s;
+    animation-delay: 0.1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cloud2 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 120%
+    }
+}
+
+.cloud3 {
+    position: absolute;
+    z-index: 10;
+    margin-left: -14%;
+    margin-top: 20%;
+    animation-name: cloud3;
+    animation-duration: 24s;
+    animation-delay: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cloud3 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 120%
+    }
+}
+
+.cloud4 {
+    position: absolute;
+    z-index: 10;
+    margin-left: -16%;
+    margin-top: -5%;
+    animation-name: cloud4;
+    animation-duration: 26s;
+    animation-delay: 0.3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cloud4 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 120%
+    }
+}
+
+/* form styles */
+
+form .req {
+    color: #ca5354;
+}
+
+/* placeholder styles: */
+::-webkit-input-placeholder {
+    color: #aaafbd;
+    font-style: italic;
+}
+
+/* WebKit */
+:-moz-placeholder {
+    color: #aaafbd;
+    font-style: italic;
+}
+
+/* Mozilla Firefox 4 to 18 */
+::-moz-placeholder {
+    color: #aaafbd;
+    font-style: italic;
+}
+
+/* Mozilla Firefox 19+ */
+:-ms-input-placeholder {
+    color: #aaafbd;
+    font-style: italic;
+}
+
+/* Internet Explorer 10+ */
+
+label{
+    margin-bottom: 0 !important;
+}
+form .input {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 0.9em;
+    font-weight: normal;
+    color: #898989;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    box-sizing: content-box;
+    transition: all 0.3s linear;
+
+}
+
+form .input:focus {
+    width: 260px;
+    color: #545454;
+    background-color: #fff;
+    background-position: 110% center;
+    background-repeat: no-repeat;
+    border-color: #059 !important;
+    box-shadow: 0 1px 4px -1px #a8a8a8 inset, 0 1px rgba(255, 255, 255, 0.6), 0 0 11px rgba(70, 100, 200, 0.7) !important;
+}
+
+form .input:valid {
+    background-color: #deecda;
+    background-position: 98% center;
+    background-repeat: no-repeat;
+    color: #7d996e;
+    border: 1px solid #95bc7d;
+}
+
+form .input:focus:valid {
+    box-shadow: 0 1px 4px -1px #a8a8a8 inset, 0 1px rgba(255, 255, 255, 0.6), 0 0 11px rgba(120, 200, 70, 0.7);
+}
+
+/*
+GAME FLIPFLOP
+ */
+
+
+ .block {
+    position: relative;
+    cursor: auto;
+    height: 125px;
+    width: 125px;
+}
+
+.block-front {
+    border-color: white;
+    transform: rotateY(180deg);
+}
+
+
+.block-value {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 100ms ease-in-out;
+    transform: scale(.9);
+}
+
+.block-face {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border-width: 1px;
+    border-style: solid;
+    overflow: hidden;
+    transition: transform 500ms ease-in-out;
+    backface-visibility: hidden;
+}
+
+.block.visible .block-back {
+    transform: rotateY(-180deg);
+}
+
+.block.visible .block-front {
+    transform: rotateY(0);
+}
+
+
+.block-back {
+    border-color: white;
+    transform: rotateY(0);
+}
+
+
+.overlay-text {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: azure;
+    font-family: 'Dancing Script', cursive;
+    transition: background-color 500ms, font-size 500ms;
+    cursor: pointer;
+}
+
+.overlay-text-small {
+    font-size: .3em;
+}
+
+.overlay-text.visible {
+    display: flex;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes dance {
+    0%, 100% {
+        transform: rotate(0)
+    }
+
+    25% {
+        transform: rotate(-30deg)
+    }
+
+    75% {
+        transform: rotate(30deg)
+    }
+}
+
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, .8);
+        font-size: 10em;
+    }
+}
+
+
