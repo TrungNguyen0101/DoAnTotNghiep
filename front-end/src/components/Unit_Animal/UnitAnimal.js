@@ -17,7 +17,7 @@ class UnitAnimal extends Component {
       minutes: 0,
       seconds: "00",
       number: "",
-      gameOver: false,
+      lessonOver: false,
       currentUser: Auth.getCurrentUser(),
       animals: [
         "Cat",
@@ -35,47 +35,47 @@ class UnitAnimal extends Component {
       urls: [
         {
           code: "Cat",
-          name: "Images/Unit Animal/Game_Card/G_Cat.png",
+          name: "Images/Unit Animal/lesson_Card/G_Cat.png",
         },
         {
           code: "Crab",
-          name: "Images/Unit Animal/Game_Card/G_Crab.png",
+          name: "Images/Unit Animal/lesson_Card/G_Crab.png",
         },
         {
           code: "Dog",
-          name: "Images/Unit Animal/Game_Card/G_Dog.png",
+          name: "Images/Unit Animal/lesson_Card/G_Dog.png",
         },
         {
           code: "Dolphin",
-          name: "Images/Unit Animal/Game_Card/G_Dolphin.png",
+          name: "Images/Unit Animal/lesson_Card/G_Dolphin.png",
         },
         {
           code: "Duck",
-          name: "Images/Unit Animal/Game_Card/G_Duck.png",
+          name: "Images/Unit Animal/lesson_Card/G_Duck.png",
         },
         {
           code: "Lion",
-          name: "Images/Unit Animal/Game_Card/G_Lion.png",
+          name: "Images/Unit Animal/lesson_Card/G_Lion.png",
         },
         {
           code: "Monkey",
-          name: "Images/Unit Animal/Game_Card/G_Monkey.png",
+          name: "Images/Unit Animal/lesson_Card/G_Monkey.png",
         },
         {
           code: "Penguin",
-          name: "Images/Unit Animal/Game_Card/G_Penguin.png",
+          name: "Images/Unit Animal/lesson_Card/G_Penguin.png",
         },
         {
           code: "Pig",
-          name: "Images/Unit Animal/Game_Card/G_Pig.png",
+          name: "Images/Unit Animal/lesson_Card/G_Pig.png",
         },
         {
           code: "Sheep",
-          name: "Images/Unit Animal/Game_Card/G_Sheep.png",
+          name: "Images/Unit Animal/lesson_Card/G_Sheep.png",
         },
       ],
       data: [],
-      ok: "Images/Unit Animal/Game_Card/G_Ok.png",
+      ok: "Images/Unit Animal/lesson_Card/G_Ok.png",
       countData: [],
     };
   }
@@ -90,7 +90,7 @@ class UnitAnimal extends Component {
 
   onBackButtonEvent = (e) => {
     e.preventDefault();
-    // this.gameOver();
+    // this.lessonOver();
     window.location.reload();
     this.props.history.push("/home-page");
   };
@@ -152,8 +152,8 @@ class UnitAnimal extends Component {
       });
   };
 
-  gameOver = () => {
-    this.setState({ gameOver: true });
+  lessonOver = () => {
+    this.setState({ lessonOver: true });
     clearInterval(this.state.countdown);
   };
 
@@ -366,7 +366,7 @@ class UnitAnimal extends Component {
                 Chúc mừng
               </h4>
               <h2>
-                Bạn đạt <span id="score-game">{this.state.score}</span> điểm
+                Bạn đạt <span id="score-lesson">{this.state.score}</span> điểm
               </h2>
               {this.state.currentUser ? (
                 <p id="description">Bạn được nhận thêm điểm kinh nghiệm</p>
@@ -485,7 +485,7 @@ class UnitAnimal extends Component {
             />
           </div>
           <div className="col-md-7">
-            <div className="time-bar row" id="gameInfoBlock">
+            <div className="time-bar row" id="lessonInfoBlock">
               <div className="time col-md-8">
                 <span id="Timer">
                   Thời gian {this.state.minutes}:{this.state.seconds}
@@ -500,7 +500,7 @@ class UnitAnimal extends Component {
             </div>
           </div>
         </div>
-        <div className="row center background-color-white game-aphabet mt-4">
+        <div className="row center background-color-white lesson-aphabet mt-4">
           {!this.state.isWin && (
             <>
               <div

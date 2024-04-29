@@ -99,8 +99,8 @@ class QuestionNumber extends Component {
   render() {
     return (
       <div
-        className="game-number-row"
-        id="game-number-row-question"
+        className="lesson-number-row"
+        id="lesson-number-row-question"
         style={{ textAlign: "center" }}
       >
         {this.displayElement()}

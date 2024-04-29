@@ -29,7 +29,7 @@ export const FlipFlopDidMount = (currentUser) => {
       seconds = seconds < 10 ? "0" + seconds : seconds;
       display.textContent = `Thời gian ${minutes}:${seconds}`;
       if (--timer < 0) {
-        gameOver();
+        lessonOver();
       }
     }, 1000);
   }
@@ -43,17 +43,17 @@ export const FlipFlopDidMount = (currentUser) => {
     shuffledBlocks;
   // for implementing flip n match logic
   var currentlyFlippedArr, matchedCount, blockToMatch1, blockToMatch2;
-  // for implementing game info block
+  // for implementing lesson info block
   var flipCounter,
-    gameOn = false;
+    lessonOn = false;
 
   //count down
 
   //play again
   playAgain();
 
-  // start Game
-  startGame();
+  // start lesson
+  startlesson();
 
   function playAgain() {
     const playAgain = document.getElementById("play-again");
@@ -88,17 +88,17 @@ export const FlipFlopDidMount = (currentUser) => {
               document.getElementsByClassName("demo")[0].style.display = "none";
             }
 
-            resetGame();
+            resetlesson();
             init();
           });
       });
     }
   }
 
-  function startGame() {
-    const startGame = document.getElementById("start-game");
-    if (startGame) {
-      startGame.addEventListener("click", function () {
+  function startlesson() {
+    const startlesson = document.getElementById("start-lesson");
+    if (startlesson) {
+      startlesson.addEventListener("click", function () {
         if (document.getElementsByClassName("panel-hd")) {
           document.getElementsByClassName("panel-hd")[0].style.display = "none";
         }
@@ -127,7 +127,7 @@ export const FlipFlopDidMount = (currentUser) => {
             if (document.getElementsByClassName("demo")) {
               document.getElementsByClassName("demo")[0].style.display = "none";
             }
-            resetGame();
+            resetlesson();
             init();
           });
       });
@@ -148,12 +148,12 @@ export const FlipFlopDidMount = (currentUser) => {
         if (document.getElementsByClassName("demo")) {
           document.getElementsByClassName("demo")[0].style.display = "none";
         }
-        resetGame();
+        resetlesson();
         init();
       });
   }
 
-  function resetGame() {
+  function resetlesson() {
     var elements = document.getElementsByClassName("block");
     if (elements) {
       while (elements.length > 0) {
@@ -163,7 +163,7 @@ export const FlipFlopDidMount = (currentUser) => {
   }
 
   function init() {
-    gameOn = true;
+    lessonOn = true;
     memoryBlockArr = new Array(18);
     blockFrontImagesAll = [];
     shuffledBlocks = [];
@@ -173,32 +173,32 @@ export const FlipFlopDidMount = (currentUser) => {
     var minutes = 2;
     var display = document.getElementById("Timer");
     blockFrontImages = [
-      "Images/Unit_Aphabet/Game_Cards/A.png",
-      "Images/Unit_Aphabet/Game_Cards/B.png",
-      "Images/Unit_Aphabet/Game_Cards/C.png",
-      "Images/Unit_Aphabet/Game_Cards/D.png",
-      "Images/Unit_Aphabet/Game_Cards/E.png",
-      "Images/Unit_Aphabet/Game_Cards/F.png",
-      "Images/Unit_Aphabet/Game_Cards/G.png",
-      "Images/Unit_Aphabet/Game_Cards/H.png",
-      "Images/Unit_Aphabet/Game_Cards/I.png",
-      "Images/Unit_Aphabet/Game_Cards/J.png",
-      "Images/Unit_Aphabet/Game_Cards/K.png",
-      "Images/Unit_Aphabet/Game_Cards/L.png",
-      "Images/Unit_Aphabet/Game_Cards/M.png",
-      "Images/Unit_Aphabet/Game_Cards/N.png",
-      "Images/Unit_Aphabet/Game_Cards/O.png",
-      "Images/Unit_Aphabet/Game_Cards/P.png",
-      "Images/Unit_Aphabet/Game_Cards/Q.png",
-      "Images/Unit_Aphabet/Game_Cards/R.png",
-      "Images/Unit_Aphabet/Game_Cards/S.png",
-      "Images/Unit_Aphabet/Game_Cards/T.png",
-      "Images/Unit_Aphabet/Game_Cards/U.png",
-      "Images/Unit_Aphabet/Game_Cards/V.png",
-      "Images/Unit_Aphabet/Game_Cards/W.png",
-      "Images/Unit_Aphabet/Game_Cards/X.png",
-      "Images/Unit_Aphabet/Game_Cards/Y.png",
-      "Images/Unit_Aphabet/Game_Cards/Z.png",
+      "Images/Unit_Aphabet/lesson_Cards/A.png",
+      "Images/Unit_Aphabet/lesson_Cards/B.png",
+      "Images/Unit_Aphabet/lesson_Cards/C.png",
+      "Images/Unit_Aphabet/lesson_Cards/D.png",
+      "Images/Unit_Aphabet/lesson_Cards/E.png",
+      "Images/Unit_Aphabet/lesson_Cards/F.png",
+      "Images/Unit_Aphabet/lesson_Cards/G.png",
+      "Images/Unit_Aphabet/lesson_Cards/H.png",
+      "Images/Unit_Aphabet/lesson_Cards/I.png",
+      "Images/Unit_Aphabet/lesson_Cards/J.png",
+      "Images/Unit_Aphabet/lesson_Cards/K.png",
+      "Images/Unit_Aphabet/lesson_Cards/L.png",
+      "Images/Unit_Aphabet/lesson_Cards/M.png",
+      "Images/Unit_Aphabet/lesson_Cards/N.png",
+      "Images/Unit_Aphabet/lesson_Cards/O.png",
+      "Images/Unit_Aphabet/lesson_Cards/P.png",
+      "Images/Unit_Aphabet/lesson_Cards/Q.png",
+      "Images/Unit_Aphabet/lesson_Cards/R.png",
+      "Images/Unit_Aphabet/lesson_Cards/S.png",
+      "Images/Unit_Aphabet/lesson_Cards/T.png",
+      "Images/Unit_Aphabet/lesson_Cards/U.png",
+      "Images/Unit_Aphabet/lesson_Cards/V.png",
+      "Images/Unit_Aphabet/lesson_Cards/W.png",
+      "Images/Unit_Aphabet/lesson_Cards/X.png",
+      "Images/Unit_Aphabet/lesson_Cards/Y.png",
+      "Images/Unit_Aphabet/lesson_Cards/Z.png",
     ];
     // init();
     startTimer(minutes, display);
@@ -236,16 +236,16 @@ export const FlipFlopDidMount = (currentUser) => {
       divblock.append(divblockBack);
       divblock.addEventListener("click", flipBlock);
       if (i < 6) {
-        if (document.getElementById("game-aphabet-row-one")) {
-          document.getElementById("game-aphabet-row-one").append(divblock);
+        if (document.getElementById("lesson-aphabet-row-one")) {
+          document.getElementById("lesson-aphabet-row-one").append(divblock);
         }
       } else if (6 <= i && i < 12) {
-        if (document.getElementById("game-aphabet-row-two")) {
-          document.getElementById("game-aphabet-row-two").append(divblock);
+        if (document.getElementById("lesson-aphabet-row-two")) {
+          document.getElementById("lesson-aphabet-row-two").append(divblock);
         }
       } else {
-        if (document.getElementById("game-aphabet-row-three")) {
-          document.getElementById("game-aphabet-row-three").append(divblock);
+        if (document.getElementById("lesson-aphabet-row-three")) {
+          document.getElementById("lesson-aphabet-row-three").append(divblock);
         }
       }
     }
@@ -280,7 +280,7 @@ export const FlipFlopDidMount = (currentUser) => {
   }
 
   function flipBlock() {
-    if (gameOn === true) {
+    if (lessonOn === true) {
       this.classList.add("visible");
       if (blockToMatch1 !== this.id) {
         if (currentlyFlippedArr.length === 0) {
@@ -314,7 +314,7 @@ export const FlipFlopDidMount = (currentUser) => {
                 }
               });
 
-            gameOn = false;
+            lessonOn = false;
             var wait = (ms) =>
               new Promise((resolve) => setTimeout(resolve, ms));
             Promise.resolve(800)
@@ -374,12 +374,12 @@ export const FlipFlopDidMount = (currentUser) => {
     }
 
     currentlyFlippedArr = [];
-    gameOn = true;
+    lessonOn = true;
   }
 
   function showWin() {
     hideElements();
-    gameOn = false;
+    lessonOn = false;
     if (document.getElementsByClassName("panel")) {
       if (document.getElementsByClassName("panel")[0]) {
         document.getElementsByClassName("panel")[0].style.display = "block";
@@ -398,16 +398,16 @@ export const FlipFlopDidMount = (currentUser) => {
           "Bạn được nhận thêm điểm kinh nghiệm";
       }
     }
-    if (document.getElementById("point-game")) {
-      document.getElementById("point-game").innerHTML = `${flipCounter}`;
+    if (document.getElementById("point-lesson")) {
+      document.getElementById("point-lesson").innerHTML = `${flipCounter}`;
     }
 
     apiScore();
     clearInterval(countdown);
   }
 
-  function gameOver() {
-    gameOn = false;
+  function lessonOver() {
+    lessonOn = false;
     if (document.getElementsByClassName("panel")) {
       if (document.getElementsByClassName("panel")[0]) {
         document.getElementsByClassName("panel")[0].style.display = "block";
@@ -422,8 +422,8 @@ export const FlipFlopDidMount = (currentUser) => {
     if (document.getElementById("description")) {
       document.getElementById("description").style.display = "none";
     }
-    if (document.getElementById("point-game")) {
-      document.getElementById("point-game").innerHTML = `${flipCounter}`;
+    if (document.getElementById("point-lesson")) {
+      document.getElementById("point-lesson").innerHTML = `${flipCounter}`;
     }
     apiScore();
     clearInterval(countdown);

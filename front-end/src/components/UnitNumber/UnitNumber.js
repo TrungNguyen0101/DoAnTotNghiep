@@ -113,7 +113,7 @@ class UnitNumber extends Component {
       minutes: 0,
       seconds: "00",
       number: "",
-      gameOver: false,
+      lessonOver: false,
       ids: ["answer-one", "answer-two", "answer-three", "answer-four"],
       currentUser: Auth.getCurrentUser(),
     };
@@ -128,7 +128,7 @@ class UnitNumber extends Component {
 
   onBackButtonEvent = (e) => {
     e.preventDefault();
-    // this.gameOver();
+    // this.lessonOver();
     this.props.history.push("/home-page");
     window.location.reload();
   };
@@ -244,9 +244,9 @@ class UnitNumber extends Component {
       });
   };
 
-  gameOver = () => {
+  lessonOver = () => {
     this.setState({ score: this.state.score, isWin: true });
-    // this.setState({gameOver: true})
+    // this.setState({lessonOver: true})
     this.apiScore();
     clearInterval(this.state.countdown);
   };
@@ -268,7 +268,7 @@ class UnitNumber extends Component {
       seconds = seconds < 10 ? "0" + seconds : seconds;
       this.setState({ minutes, seconds });
       if (--timer < 0) {
-        this.gameOver();
+        this.lessonOver();
       }
     }, 1000);
     this.setState({ countdown });
@@ -378,8 +378,8 @@ class UnitNumber extends Component {
     }
   };
 
-  gameOverCountdown = () => {
-    this.setState({ start: true, gameOver: false });
+  lessonOverCountdown = () => {
+    this.setState({ start: true, lessonOver: false });
     if (document.getElementsByClassName("demo")) {
       document.getElementsByClassName("demo")[0].style.display = "block";
     }
@@ -486,7 +486,7 @@ class UnitNumber extends Component {
                 Chúc mừng
               </h4>
               <h2>
-                Bạn đạt <span id="score-game">{this.state.score}</span> điểm
+                Bạn đạt <span id="score-lesson">{this.state.score}</span> điểm
               </h2>
               {this.state.currentUser ? (
                 <p id="description">Bạn được nhận thêm điểm kinh nghiệm</p>
@@ -511,14 +511,14 @@ class UnitNumber extends Component {
           </div>
         )}
 
-        {this.state.gameOver && (
+        {this.state.lessonOver && (
           <div id="js-panel" className="panel" style={{ display: "block" }}>
             <div className="panel__content">
               <h4 id="notify" style={{ color: "#dc3545" }}>
                 Hết giờ
               </h4>
               <h2>
-                Bạn đạt <span id="score-game">{this.state.score}</span> điểm
+                Bạn đạt <span id="score-lesson">{this.state.score}</span> điểm
               </h2>
               <p id="description"></p>
             </div>
@@ -527,7 +527,7 @@ class UnitNumber extends Component {
               <Link
                 className="flap flap__btn"
                 id="play-again"
-                onClick={() => this.gameOverCountdown()}
+                onClick={() => this.lessonOverCountdown()}
               >
                 Chơi lại
               </Link>
@@ -635,7 +635,7 @@ class UnitNumber extends Component {
             />
           </div>
           <div className="col-md-7">
-            <div className="time-bar row" id="gameInfoBlock">
+            <div className="time-bar row" id="lessonInfoBlock">
               <div className="time col-md-8">
                 <span id="Timer">
                   Thời gian {this.state.minutes}:{this.state.seconds}
@@ -650,12 +650,12 @@ class UnitNumber extends Component {
             </div>
           </div>
         </div>
-        <div className="row center background-color-white game-aphabet mt-4">
+        <div className="row center background-color-white lesson-aphabet mt-4">
           {!this.state.isWin && (
             <>
               <div
-                className="game-number-row"
-                id="game-number-row-question"
+                className="lesson-number-row"
+                id="lesson-number-row-question"
                 style={{ textAlign: "center" }}
               >
                 {this.state.isCorrectAnswer ? (

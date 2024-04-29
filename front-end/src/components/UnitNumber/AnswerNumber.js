@@ -319,7 +319,7 @@ class AnswerNumber extends Component {
         //     return <Redirect to={this.state.url}/>
         // }
         return (
-            <div className="game-number-row row" id="game-number-row-answer">
+            <div className="lesson-number-row row" id="lesson-number-row-answer">
                 {this.displayElement()}
             </div>
         );

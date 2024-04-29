@@ -33,7 +33,7 @@ class UnitAphabet extends Component {
                         <div className="flap outer flap--left"/>
                         <Link
                             className="flap flap__btn"
-                            id="start-game"
+                            id="start-lesson"
                         >
                             Bắt đầu
                         </Link>
@@ -49,7 +49,7 @@ class UnitAphabet extends Component {
                     <div className="panel__content">
                         <h4 id="notify"></h4>
                         <h2>
-                            Bạn đạt <span id="point-game">0</span> điểm
+                            Bạn đạt <span id="point-lesson">0</span> điểm
                         </h2>
                         {this.state.currentUser ? <p id="description"></p> : <p>Hãy đăng ký để lưu điểm của bạn</p>}
                     </div>
@@ -134,7 +134,7 @@ class UnitAphabet extends Component {
                         />
                     </div>
                     <div className="col-md-7">
-                        <div className="time-bar row" id="gameInfoBlock">
+                        <div className="time-bar row" id="lessonInfoBlock">
                             <div className="time col-md-8">
                                 <span id="Timer">Thời gian: 2:00</span>
                             </div>
@@ -145,10 +145,10 @@ class UnitAphabet extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="row center background-color-white game-aphabet mt-4">
-                    <div className="game-aphabet-row" id="game-aphabet-row-one"></div>
-                    <div className="game-aphabet-row" id="game-aphabet-row-two"></div>
-                    <div className="game-aphabet-row" id="game-aphabet-row-three"></div>
+                <div className="row center background-color-white lesson-aphabet mt-4">
+                    <div className="lesson-aphabet-row" id="lesson-aphabet-row-one"></div>
+                    <div className="lesson-aphabet-row" id="lesson-aphabet-row-two"></div>
+                    <div className="lesson-aphabet-row" id="lesson-aphabet-row-three"></div>
                 </div>
             </div>
         );

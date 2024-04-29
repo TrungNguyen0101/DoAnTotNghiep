@@ -7,7 +7,7 @@ class UnitColor extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: "/Images/Unit Color/Game_Card/Pig/NoColor_Pig.png",
+      url: "/Images/Unit Color/lesson_Card/Pig/NoColor_Pig.png",
       colors: [
         "Green",
         "Orange",
@@ -36,34 +36,34 @@ class UnitColor extends Component {
       urls: [
         {
           code: "Green",
-          name: "Images/Unit Color/Game_Card/Pig/Green_Pig.png",
+          name: "Images/Unit Color/lesson_Card/Pig/Green_Pig.png",
         },
         {
           code: "Orange",
-          name: "Images/Unit Color/Game_Card/Pig/Orange_Pig.png",
+          name: "Images/Unit Color/lesson_Card/Pig/Orange_Pig.png",
         },
-        { code: "Red", name: "Images/Unit Color/Game_Card/Pig/Red_Pig.png" },
-        { code: "Pink", name: "Images/Unit Color/Game_Card/Pig/Pink_Pig.png" },
+        { code: "Red", name: "Images/Unit Color/lesson_Card/Pig/Red_Pig.png" },
+        { code: "Pink", name: "Images/Unit Color/lesson_Card/Pig/Pink_Pig.png" },
         {
           code: "Purple",
-          name: "Images/Unit Color/Game_Card/Pig/Purple_Pig.png",
+          name: "Images/Unit Color/lesson_Card/Pig/Purple_Pig.png",
         },
         {
           code: "Yellow",
-          name: "Images/Unit Color/Game_Card/Pig/Yellow_Pig.png",
+          name: "Images/Unit Color/lesson_Card/Pig/Yellow_Pig.png",
         },
-        { code: "Blue", name: "Images/Unit Color/Game_Card/Pig/Blue_Pig.png" },
+        { code: "Blue", name: "Images/Unit Color/lesson_Card/Pig/Blue_Pig.png" },
         {
           code: "Black",
-          name: "Images/Unit Color/Game_Card/Pig/Black_Pig.png",
+          name: "Images/Unit Color/lesson_Card/Pig/Black_Pig.png",
         },
         {
           code: "Brown",
-          name: "Images/Unit Color/Game_Card/Pig/Brown_Pig.png",
+          name: "Images/Unit Color/lesson_Card/Pig/Brown_Pig.png",
         },
         {
           code: "White",
-          name: "Images/Unit Color/Game_Card/Pig/White_Pig.png",
+          name: "Images/Unit Color/lesson_Card/Pig/White_Pig.png",
         },
       ],
       isCorrectAnswer: false,
@@ -75,7 +75,7 @@ class UnitColor extends Component {
       minutes: 0,
       seconds: "00",
       number: "",
-      gameOver: false,
+      lessonOver: false,
       currentUser: Auth.getCurrentUser(),
     };
   }
@@ -136,7 +136,7 @@ class UnitColor extends Component {
                 this.setState({
                   colors,
                   color,
-                  url: "/Images/Unit Color/Game_Card/Pig/NoColor_Pig.png",
+                  url: "/Images/Unit Color/lesson_Card/Pig/NoColor_Pig.png",
                 });
                 this.toSpeak(color);
                 for (let i = 0; i < this.state.ids.length; i++) {
@@ -168,7 +168,7 @@ class UnitColor extends Component {
                 this.setState({
                   colors,
                   color,
-                  url: "/Images/Unit Color/Game_Card/Pig/NoColor_Pig.png",
+                  url: "/Images/Unit Color/lesson_Card/Pig/NoColor_Pig.png",
                 });
                 this.toSpeak(color);
                 for (let i = 0; i < this.state.ids.length; i++) {
@@ -208,7 +208,7 @@ class UnitColor extends Component {
 
   onBackButtonEvent = (e) => {
     e.preventDefault();
-    // this.gameOver();
+    // this.lessonOver();
     this.props.history.push("/home-page");
     window.location.reload();
   };
@@ -240,7 +240,7 @@ class UnitColor extends Component {
           this.setState({
             isHidden: false,
             isCorrectAnswer: false,
-            url: "/Images/Unit Color/Game_Card/Pig/NoColor_Pig.png",
+            url: "/Images/Unit Color/lesson_Card/Pig/NoColor_Pig.png",
           });
           if (document.getElementById("countdown")) {
             document
@@ -292,8 +292,8 @@ class UnitColor extends Component {
       });
   };
 
-  gameOver = () => {
-    this.setState({ gameOver: true });
+  lessonOver = () => {
+    this.setState({ lessonOver: true });
     clearInterval(this.state.countdown);
   };
 
@@ -314,14 +314,14 @@ class UnitColor extends Component {
       seconds = seconds < 10 ? "0" + seconds : seconds;
       this.setState({ minutes, seconds });
       if (--timer < 0) {
-        this.gameOver();
+        this.lessonOver();
       }
     }, 1000);
     this.setState({ countdown });
   };
 
-  gameOverCountdown = () => {
-    this.setState({ start: true, gameOver: false });
+  lessonOverCountdown = () => {
+    this.setState({ start: true, lessonOver: false });
     const colors = JSON.parse(sessionStorage.getItem("colors"));
     const urls = JSON.parse(sessionStorage.getItem("urls"));
     if (colors) {
@@ -343,7 +343,7 @@ class UnitColor extends Component {
       .then(() => {
         this.setState({
           isHidden: false,
-          url: "/Images/Unit Color/Game_Card/Pig/NoColor_Pig.png",
+          url: "/Images/Unit Color/lesson_Card/Pig/NoColor_Pig.png",
         });
         let color = this.random(this.state.colors, 1)[0];
         let colors = this.state.colors.filter((i) => i !== color);
@@ -430,7 +430,7 @@ class UnitColor extends Component {
                 Chúc mừng
               </h4>
               <h2>
-                Bạn đạt <span id="score-game">{this.state.score}</span> điểm
+                Bạn đạt <span id="score-lesson">{this.state.score}</span> điểm
               </h2>
               {this.state.currentUser ? (
                 <p id="description">Bạn được nhận thêm điểm kinh nghiệm</p>
@@ -455,14 +455,14 @@ class UnitColor extends Component {
           </div>
         )}
 
-        {this.state.gameOver && (
+        {this.state.lessonOver && (
           <div id="js-panel" className="panel" style={{ display: "block" }}>
             <div className="panel__content">
               <h4 id="notify" style={{ color: "#dc3545" }}>
                 Hết giờ
               </h4>
               <h2>
-                Bạn đạt <span id="score-game">{this.state.score}</span> điểm
+                Bạn đạt <span id="score-lesson">{this.state.score}</span> điểm
               </h2>
               <p id="description"></p>
             </div>
@@ -471,7 +471,7 @@ class UnitColor extends Component {
               <Link
                 className="flap flap__btn"
                 id="play-again"
-                onClick={() => this.gameOverCountdown()}
+                onClick={() => this.lessonOverCountdown()}
               >
                 Chơi lại
               </Link>
@@ -577,7 +577,7 @@ class UnitColor extends Component {
             />
           </div>
           <div className="col-md-7">
-            <div className="time-bar row" id="gameInfoBlock">
+            <div className="time-bar row" id="lessonInfoBlock">
               <div className="time col-md-8">
                 <span id="Timer">
                   Thời gian {this.state.minutes}:{this.state.seconds}
@@ -593,11 +593,11 @@ class UnitColor extends Component {
           </div>
         </div>
         {!this.state.isWin && (
-          <div className="row center background-color-white game-aphabet mt-4">
+          <div className="row center background-color-white lesson-aphabet mt-4">
             <div className="col-sm-8">
               <a className="zoom">
                 <img
-                  src="/Images/Unit Color/Game_Card/Pen/Red_Pen.png"
+                  src="/Images/Unit Color/lesson_Card/Pen/Red_Pen.png"
                   alt=""
                   style={{ cursor: "pointer" }}
                   id="Red"
@@ -609,7 +609,7 @@ class UnitColor extends Component {
               </a>
               <a className="zoom">
                 <img
-                  src="/Images/Unit Color/Game_Card/Pen/Yellow_Pen.png"
+                  src="/Images/Unit Color/lesson_Card/Pen/Yellow_Pen.png"
                   alt=""
                   width="100px"
                   id="Yellow"
@@ -621,7 +621,7 @@ class UnitColor extends Component {
               </a>
               <a className="zoom">
                 <img
-                  src="/Images/Unit Color/Game_Card/Pen/Brown_Pen.png"
+                  src="/Images/Unit Color/lesson_Card/Pen/Brown_Pen.png"
                   alt=""
                   width="100px"
                   id="Brown"
@@ -634,7 +634,7 @@ class UnitColor extends Component {
               <br />
               <a className="zoom">
                 <img
-                  src="/Images/Unit Color/Game_Card/Pen/Green_Pen.png"
+                  src="/Images/Unit Color/lesson_Card/Pen/Green_Pen.png"
                   alt=""
                   width="100px"
                   id="Green"
@@ -645,7 +645,7 @@ class UnitColor extends Component {
               </a>
               <a className="zoom">
                 <img
-                  src="/Images/Unit Color/Game_Card/Pen/Pink_Pen.png"
+                  src="/Images/Unit Color/lesson_Card/Pen/Pink_Pen.png"
                   alt=""
                   width="100px"
                   id="Pink"
@@ -657,7 +657,7 @@ class UnitColor extends Component {
               </a>
               <a className="zoom">
                 <img
-                  src="/Images/Unit Color/Game_Card/Pen/White_Pen.png"
+                  src="/Images/Unit Color/lesson_Card/Pen/White_Pen.png"
                   alt=""
                   id="White"
                   width="100px"
@@ -669,7 +669,7 @@ class UnitColor extends Component {
               </a>
               <a className="zoom">
                 <img
-                  src="/Images/Unit Color/Game_Card/Pen/Orange_Pen.png"
+                  src="/Images/Unit Color/lesson_Card/Pen/Orange_Pen.png"
                   alt=""
                   width="100px"
                   id="Orange"
@@ -682,7 +682,7 @@ class UnitColor extends Component {
               <br />
               <a className="zoom">
                 <img
-                  src="/Images/Unit Color/Game_Card/Pen/Blue_Pen.png"
+                  src="/Images/Unit Color/lesson_Card/Pen/Blue_Pen.png"
                   alt=""
                   width="100px"
                   id="Blue"
@@ -693,7 +693,7 @@ class UnitColor extends Component {
               </a>
               <a className="zoom">
                 <img
-                  src="/Images/Unit Color/Game_Card/Pen/Purple_Pen.png"
+                  src="/Images/Unit Color/lesson_Card/Pen/Purple_Pen.png"
                   alt=""
                   width="100px"
                   id="Purple"
@@ -705,7 +705,7 @@ class UnitColor extends Component {
               </a>
               <a className="zoom">
                 <img
-                  src="/Images/Unit Color/Game_Card/Pen/Black_Pen.png"
+                  src="/Images/Unit Color/lesson_Card/Pen/Black_Pen.png"
                   alt=""
                   width="100px"
                   id="Black"
@@ -717,8 +717,8 @@ class UnitColor extends Component {
               </a>
             </div>
             <div
-              className="col-sm-4 game-number-row"
-              id="game-number-row-question"
+              className="col-sm-4 lesson-number-row"
+              id="lesson-number-row-question"
               style={{ marginLeft: "-100px", textAlign: "center" }}
             >
               <a>
