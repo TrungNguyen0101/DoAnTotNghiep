@@ -43,8 +43,8 @@ var port = normalizePort(process.env.PORT || '3030');
 app.set('port', port);
 var server = http.createServer(app);
 server.listen(port, async () => {
-    await db.connect();
-    console.log(`Api is running on port ${port}`)
+    await db.connect()
+    console.log(`Api is running on http://localhost:${port}/api`)
 })
 
 
