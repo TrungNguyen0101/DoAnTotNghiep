@@ -40,64 +40,64 @@ const LearnAlphabet = () => {
   const [currentUser, setCurrentUser] = useState(Auth.getCurrentUser());
   const [isChanged, setIsChanged] = useState(false);
 
-  // const images = [
-  //   { key: "1", title: title2, image: Aa, code: "A" },
-  //   { key: "2", title: title2, image: Bb, code: "B" },
-  //   { key: "3", title: title2, image: Cc, code: "C" },
-  //   { key: "4", title: title2, image: Dd, code: "D" },
-  //   { key: "5", title: title2, image: Ee, code: "E" },
-  //   { key: "6", title: title2, image: Ff, code: "F" },
-  //   { key: "7", title: title2, image: Gg, code: "G" },
-  //   { key: "8", title: title2, image: Hh, code: "H" },
-  //   { key: "9", title: title2, image: Ii, code: "I" },
-  //   { key: "10", title: title2, image: Jj, code: "J" },
-  //   { key: "11", title: title2, image: Kk, code: "K" },
-  //   { key: "12", title: title2, image: Ll, code: "L" },
-  //   { key: "13", title: title2, image: Mm, code: "M" },
-  //   { key: "14", title: title2, image: Nn, code: "N" },
-  //   { key: "15", title: title2, image: Oo, code: "O" },
-  //   { key: "16", title: title2, image: Pp, code: "P" },
-  //   { key: "17", title: title2, image: Qq, code: "Q" },
-  //   { key: "18", title: title2, image: Rr, code: "R" },
-  //   { key: "19", title: title2, image: Ss, code: "S" },
-  //   { key: "20", title: title2, image: Tt, code: "T" },
-  //   { key: "21", title: title2, image: Uu, code: "U" },
-  //   { key: "22", title: title2, image: Vv, code: "V" },
-  //   { key: "23", title: title2, image: Ww, code: "W" },
-  //   { key: "24", title: title2, image: Xx, code: "X" },
-  //   { key: "25", title: title2, image: Yy, code: "Y" },
-  //   { key: "26", title: title2, image: Zz, code: "Z" },
-  // ];
-
   const images = [
-    { key: "1", title: title2, image: Aa, code: "A", message: "あ" },
-    { key: "2", title: title2, image: Bb, code: "B", message: "い" },
-    { key: "3", title: title2, image: Cc, code: "C", message: "う" },
-    { key: "4", title: title2, image: Dd, code: "D", message: "え" },
-    { key: "5", title: title2, image: Ee, code: "E", message: "お" },
-    { key: "6", title: title2, image: Ff, code: "F", message: "か" },
-    { key: "7", title: title2, image: Gg, code: "G", message: "き" },
-    { key: "8", title: title2, image: Hh, code: "H", message: "く" },
-    { key: "9", title: title2, image: Ii, code: "I", message: "け" },
-    { key: "10", title: title2, image: Jj, code: "J", message: "こ" },
-    { key: "11", title: title2, image: Kk, code: "K", message: "さ" },
-    { key: "12", title: title2, image: Ll, code: "L", message: "し" },
-    { key: "13", title: title2, image: Mm, code: "M", message: "す" },
-    { key: "14", title: title2, image: Nn, code: "N", message: "せ" },
-    { key: "15", title: title2, image: Oo, code: "O", message: "そ" },
-    { key: "16", title: title2, image: Pp, code: "P", message: "た" },
-    { key: "17", title: title2, image: Qq, code: "Q", message: "ち" },
-    { key: "18", title: title2, image: Rr, code: "R", message: "つ" },
-    { key: "19", title: title2, image: Ss, code: "S", message: "て" },
-    { key: "20", title: title2, image: Tt, code: "T", message: "と" },
-    { key: "21", title: title2, image: Uu, code: "U", message: "な" },
-    { key: "22", title: title2, image: Vv, code: "V", message: "に" },
-    { key: "23", title: title2, image: Ww, code: "W", message: "ぬ" },
-    { key: "24", title: title2, image: Xx, code: "X", message: "ね" },
-    { key: "25", title: title2, image: Yy, code: "Y", message: "の" },
-    { key: "26", title: title2, image: Zz, code: "Z", message: "は" },
-    // Thêm các phần tử tiếp theo tương ứng với các ký tự tiếp theo trong bảng chữ cái tiếng Nhật
+    { key: "1", title: title2, image: Aa, code: "A" },
+    { key: "2", title: title2, image: Bb, code: "B" },
+    { key: "3", title: title2, image: Cc, code: "C" },
+    { key: "4", title: title2, image: Dd, code: "D" },
+    { key: "5", title: title2, image: Ee, code: "E" },
+    { key: "6", title: title2, image: Ff, code: "F" },
+    { key: "7", title: title2, image: Gg, code: "G" },
+    { key: "8", title: title2, image: Hh, code: "H" },
+    { key: "9", title: title2, image: Ii, code: "I" },
+    { key: "10", title: title2, image: Jj, code: "J" },
+    { key: "11", title: title2, image: Kk, code: "K" },
+    { key: "12", title: title2, image: Ll, code: "L" },
+    { key: "13", title: title2, image: Mm, code: "M" },
+    { key: "14", title: title2, image: Nn, code: "N" },
+    { key: "15", title: title2, image: Oo, code: "O" },
+    { key: "16", title: title2, image: Pp, code: "P" },
+    { key: "17", title: title2, image: Qq, code: "Q" },
+    { key: "18", title: title2, image: Rr, code: "R" },
+    { key: "19", title: title2, image: Ss, code: "S" },
+    { key: "20", title: title2, image: Tt, code: "T" },
+    { key: "21", title: title2, image: Uu, code: "U" },
+    { key: "22", title: title2, image: Vv, code: "V" },
+    { key: "23", title: title2, image: Ww, code: "W" },
+    { key: "24", title: title2, image: Xx, code: "X" },
+    { key: "25", title: title2, image: Yy, code: "Y" },
+    { key: "26", title: title2, image: Zz, code: "Z" },
   ];
+
+  // const images = [
+  //   { key: "1", title: title2, image: Aa, code: "A", message: "あ" },
+  //   { key: "2", title: title2, image: Bb, code: "B", message: "い" },
+  //   { key: "3", title: title2, image: Cc, code: "C", message: "う" },
+  //   { key: "4", title: title2, image: Dd, code: "D", message: "え" },
+  //   { key: "5", title: title2, image: Ee, code: "E", message: "お" },
+  //   { key: "6", title: title2, image: Ff, code: "F", message: "か" },
+  //   { key: "7", title: title2, image: Gg, code: "G", message: "き" },
+  //   { key: "8", title: title2, image: Hh, code: "H", message: "く" },
+  //   { key: "9", title: title2, image: Ii, code: "I", message: "け" },
+  //   { key: "10", title: title2, image: Jj, code: "J", message: "こ" },
+  //   { key: "11", title: title2, image: Kk, code: "K", message: "さ" },
+  //   { key: "12", title: title2, image: Ll, code: "L", message: "し" },
+  //   { key: "13", title: title2, image: Mm, code: "M", message: "す" },
+  //   { key: "14", title: title2, image: Nn, code: "N", message: "せ" },
+  //   { key: "15", title: title2, image: Oo, code: "O", message: "そ" },
+  //   { key: "16", title: title2, image: Pp, code: "P", message: "た" },
+  //   { key: "17", title: title2, image: Qq, code: "Q", message: "ち" },
+  //   { key: "18", title: title2, image: Rr, code: "R", message: "つ" },
+  //   { key: "19", title: title2, image: Ss, code: "S", message: "て" },
+  //   { key: "20", title: title2, image: Tt, code: "T", message: "と" },
+  //   { key: "21", title: title2, image: Uu, code: "U", message: "な" },
+  //   { key: "22", title: title2, image: Vv, code: "V", message: "に" },
+  //   { key: "23", title: title2, image: Ww, code: "W", message: "ぬ" },
+  //   { key: "24", title: title2, image: Xx, code: "X", message: "ね" },
+  //   { key: "25", title: title2, image: Yy, code: "Y", message: "の" },
+  //   { key: "26", title: title2, image: Zz, code: "Z", message: "は" },
+  //   // Thêm các phần tử tiếp theo tương ứng với các ký tự tiếp theo trong bảng chữ cái tiếng Nhật
+  // ];
 
   const toSpeak = (message) => {
     var speechSynthesisUtterance = new SpeechSynthesisUtterance(message);
@@ -180,9 +180,10 @@ const LearnAlphabet = () => {
                 to="#learn-aphabet"
                 key={img.key}
                 onClick={() => {
-                  toSpeak(img.message);
+                  toSpeak(img.code);
                   onChangeImg(img.code);
                 }}
+                className="inline-block w-auto"
               >
                 <img
                   src={`/Images/Unit_Aphabet/Normal Cards/${img.code}.png`}

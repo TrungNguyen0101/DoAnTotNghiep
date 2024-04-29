@@ -3,7 +3,7 @@ import ImageAvatar from "./ImageAvatar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Auth from "../../service/Auth";
-import { withRouter } from "react-router";
+// import { withRouter } from "react-router";
 
 class ContentChangeAvatar extends Component {
   constructor(props, context) {
@@ -349,4 +349,4 @@ class ContentChangeAvatar extends Component {
   }
 }
 
-export default withRouter(ContentChangeAvatar);
+export default ContentChangeAvatar;

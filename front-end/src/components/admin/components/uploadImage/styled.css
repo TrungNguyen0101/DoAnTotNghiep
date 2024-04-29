@@ -1,0 +1,28 @@
+:where(
+    .css-dev-only-do-not-override-kghr11
+  ).ant-upload-wrapper.ant-upload-picture-card-wrapper
+  .ant-upload.ant-upload-select,
+:where(
+    .css-dev-only-do-not-override-kghr11
+  ).ant-upload-wrapper.ant-upload-picture-circle-wrapper
+  .ant-upload.ant-upload-select {
+  width: 102px;
+  height: 102px;
+  text-align: center;
+  vertical-align: top;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px dashed black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+:where(
+    .css-dev-only-do-not-override-kghr11
+  ).ant-upload-wrapper.ant-upload-picture-card-wrapper
+  .ant-upload.ant-upload-select:not(.ant-upload-disabled):hover,
+:where(
+    .css-dev-only-do-not-override-kghr11
+  ).ant-upload-wrapper.ant-upload-picture-circle-wrapper
+  .ant-upload.ant-upload-select:not(.ant-upload-disabled):hover {
+  border-color: #55c655;
+}

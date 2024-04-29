@@ -1,0 +1,5 @@
+:where(.css-dev-only-do-not-override-kghr11).ant-select-single {
+  font-size: 14px;
+  height: 40px !important;
+  width: 180px;
+}
