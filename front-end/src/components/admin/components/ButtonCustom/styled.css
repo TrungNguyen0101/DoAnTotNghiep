@@ -1,0 +1,51 @@
+.button_custom {
+  font-family: monospace;
+  background-color: #f3f7fe;
+  color: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  width: 100px;
+  height: 45px;
+  transition: all 0.3s;
+}
+
+/* .button_custom:hover {
+  background-color: #3b82f6;
+  box-shadow: 0 0 0 5px #3b83f65f;
+  color: #fff;
+} */
+
+/*  */
+.button_submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  gap: 15px;
+  background-color: #007acc;
+  outline: 3px #007acc solid;
+  outline-offset: -3px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.button_submit .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+/* .button_submit:hover {
+  background-color: transparent;
+} */
+
+/* .button_submit:hover .text {
+  color: #007acc;
+} */
+
+/* .button_submit:hover svg path {
+  fill: #007acc;
+} */

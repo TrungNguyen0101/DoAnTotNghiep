@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Auth from "../service/Auth";
 import AnimalItem from "./AnimalItem";
 import axios from "axios";
-import { withRouter } from "react-router";
+// import { withRouter } from "react-router";
 
 class UnitAnimal extends Component {
   constructor(props) {
@@ -417,7 +417,7 @@ class UnitAnimal extends Component {
         )}
 
         {this.state.start && (
-          <div className="overlay-text visible" id="countdown">
+          <div className="visible overlay-text" id="countdown">
             <div className="demo">
               <div className="demo__colored-blocks">
                 <div className="demo__colored-blocks-rotater">
@@ -500,7 +500,7 @@ class UnitAnimal extends Component {
             </div>
           </div>
         </div>
-        <div className="row center background-color-white game-aphabet mt-4">
+        <div className="mt-4 row center background-color-white game-aphabet">
           {!this.state.isWin && (
             <>
               <div
@@ -541,4 +541,4 @@ class UnitAnimal extends Component {
   }
 }
 
-export default withRouter(UnitAnimal);
+export default UnitAnimal;
